@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api";
+const API = "https://job-board-gugi.onrender.com";
 
 const params = new URLSearchParams(location.search);
 const id = params.get("id");

@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api";
+const API = "https://job-board-gugi.onrender.com";
 
 document.addEventListener("submit", async (e) => {
     if (e.target.id === "loginForm" || e.target.id === "registerForm") {

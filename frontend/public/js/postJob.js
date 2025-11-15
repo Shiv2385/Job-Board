@@ -11,7 +11,7 @@ document.getElementById("postJobForm").addEventListener("submit", async function
 
     try {
         const token = localStorage.getItem("token");
-        const response = await fetch("http://localhost:5000/api/jobs", {
+        const response = await fetch("https://job-board-gugi.onrender.com", {
             method: "POST",
             headers: { "Content-Type": "application/json", "Authorization": "Bearer " + token },
             body: JSON.stringify(jobData)
