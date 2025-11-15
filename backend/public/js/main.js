@@ -1,4 +1,8 @@
-const API = "http://localhost:5000/api";
+// const API = "http://localhost:5000/api";
+const API = window.location.hostname.includes("localhost")
+    ? "http://localhost:5000/api"
+    : "https://job-board-gugi.onrender.com/api";
+
 
 const jobList = document.getElementById("jobList");
 const searchInput = document.getElementById("searchInput");
