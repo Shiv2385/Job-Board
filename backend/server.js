@@ -4,7 +4,8 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import jobRoutes from "./routes/jobRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
-
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 connectDB();
@@ -15,6 +16,17 @@ app.use(express.json());
 
 app.use("/api/jobs", jobRoutes);
 app.use("/api/auth", authRoutes);
+
+// ES Modules: __dirname fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Serve frontend
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get(/.*/, (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
