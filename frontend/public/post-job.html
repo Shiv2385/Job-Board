@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Post Job</title>
+</head>
+
+<body>
+    <header>
+        <h1>Post a New Job</h1>
+        <a href="index.html" class="btn">Back to Jobs</a>
+    </header>
+
+    <form id="postJobForm" class="form-container">
+        <label>Job Title</label>
+        <input type="text" id="title" required>
+
+        <label>Company</label>
+        <input type="text" id="company" required>
+
+        <label>Location</label>
+        <input type="text" id="location" required>
+
+        <label>Salary</label>
+        <input type="text" id="salary">
+
+        <label>Description</label>
+        <textarea id="description" required></textarea>
+
+        <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <script>
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("Please login to post a job.");
+            window.location.href = "login.html";
+        }
+    </script>
+    <script src="js/postJob.js"></script>
+</body>
+
+</html>

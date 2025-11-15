@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Job Board</title>
+</head>
+
+<body>
+    <header>
+        <h1>Job Board</h1>
+        <div>
+            <input id="searchInput" placeholder="Search jobs..." />
+            <input id="filterCompany" placeholder="Company" />
+            <input id="filterLocation" placeholder="Location" />
+            <button id="searchBtn" class="btn">Search</button>
+            <a href="post-job.html" class="btn" id="postBtn">Post a Job</a>
+            <a href="login.html" id="authLink" class="btn">Login</a>
+            <button id="logoutBtn" class="btn" style="display:none">Logout</button>
+        </div>
+    </header>
+    <section id="jobList" class="job-list"></section>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
